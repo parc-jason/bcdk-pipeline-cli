@@ -25,6 +25,7 @@ module.exports = (settings)=>{
     }),
   );
 
+
   oc.applyRecommendedLabels(objects, phases[phase].name, phase, phases[phase].changeId, phases[phase].instance)
   oc.applyAndBuild(objects)
 }

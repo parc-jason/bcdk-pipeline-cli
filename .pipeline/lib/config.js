@@ -2,7 +2,7 @@
 const options= require('pipeline-cli').Util.parseArguments()
 const changeId = options.pr //aka pull-request
 const version = '1.0.0'
-const name = 'main'
+const name = 'hello'
 
 const phases = {
   build: {namespace:'wfezkf-tools'    , name: `${name}`, phase: 'build'  , changeId:changeId, suffix: `-build-${changeId}`  , instance: `${name}-build-${changeId}`  , version:`${version}-${changeId}`, tag:`build-${version}-${changeId}`},
