@@ -47,4 +47,4 @@ const phases = {
   },
 };
 
-module.exports = exports = phases;
+module.exports = exports = {phases, options};
