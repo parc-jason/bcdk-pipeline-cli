@@ -29,7 +29,7 @@
     <data>
       <jenkins.branch.BranchSource>
         <source class="org.jenkinsci.plugins.github_branch_source.GitHubSCMSource" plugin="github-branch-source@2.3.6">
-          <id>e190eabe-7ecf-402b-b8b0-a6ba535e2d18</id>
+          <id>f18790cf-60f7-4e9c-8ffc-d91d16c245b3</id>
           <credentialsId>github-account</credentialsId>
           <repoOwner>parc-jason</repoOwner>
           <repository>bcdk-pipeline-cli</repository>
@@ -59,6 +59,6 @@
   </sources>
   <factory class="org.jenkinsci.plugins.workflow.multibranch.WorkflowBranchProjectFactory">
     <owner class="org.jenkinsci.plugins.workflow.multibranch.WorkflowMultiBranchProject" reference="../.."/>
-    <scriptPath>Jenkinsfile</scriptPath>
+    <scriptPath>Jenkinsfile.pr</scriptPath>
   </factory>
 </org.jenkinsci.plugins.workflow.multibranch.WorkflowMultiBranchProject>
