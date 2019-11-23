@@ -10,7 +10,17 @@ module.exports = (settings)=>{
   let objects = []
   const templatesLocalBaseUrl =oc.toFileUrl(path.resolve(__dirname, '../../openshift'))
 
-  // The building of your cool app goes here ▼▼▼
+  objects.push(...oc.processDeploymentTemplate(`${templatesLocalBaseUrl}/python-chain-build.yaml`, {
+    'param':{
+      'NAME': phases[phase].name,
+      'SUFFIX': phases[phase].suffix,
+      'VERSION': phases[phase].tag,
+      'SOURCE_REPOSITORY_URL': oc.git.http_url,
+      'SOURCE_REPOSITORY_REF': oc.git.ref,
+      'SOURCE_BASE_CONTEXT_DIR': 'hello-base',
+      'SOURCE_CONTEXT_DIR': 'hello-main'
+    }
+  }))
 
   oc.applyRecommendedLabels(objects, phases[phase].name, phase, phases[phase].changeId, phases[phase].instance)
   oc.applyAndBuild(objects)
