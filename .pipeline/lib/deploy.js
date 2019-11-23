@@ -16,10 +16,10 @@ module.exports = (settings)=>{
        'NAME': phases[phase].name,
        'SUFFIX': phases[phase].suffix,
        'VERSION': phases[phase].tag,
-       'HOST': `${phases[phase].name}${phases[phase].suffix}-${phases[phase].namespace}.ocp.bitbox.ca`
+       'HOST': `${phases[phase].name}${phases[phase].suffix}-${phases[phase].namespace}.pathfinder.gov.bc.ca`
      }
   }))
-  
+
   oc.applyRecommendedLabels(objects, phases[phase].name, phase, `${changeId}`, phases[phase].instance)
   oc.importImageStreams(objects, phases[phase].tag, phases.build.namespace, phases.build.tag)
   oc.applyAndDeploy(objects, phases[phase].instance)
